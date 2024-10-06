@@ -1,8 +1,9 @@
 const express = require('express');
 const Odeme = require('../models/odeme');
+const logRequesDetails = require('../middleware/logMiddleware');
 const router = express.Router();
 
-router.post('/ekle',async(req,res,next) => {
+router.post('/ekle',logRequesDetails, async(req,res,next) => {
     const yeni_odeme = await Odeme.create(req.body);
     res.send(yeni_odeme);
 });

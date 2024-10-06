@@ -1,9 +1,10 @@
 const express = require('express');
 const Adres = require('../models/adres');
 const adres = require('../models/adres');
+const logRequesDetails = require('../middleware/logMiddleware');
 const router = express.Router();
 
-router.get('/getir',async(req,res,next) => {
+router.get('/getir',logRequesDetails,async(req,res,next) => {
     const adresler = await Adres.find();
     res.send(adresler); 
 });

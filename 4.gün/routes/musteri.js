@@ -6,3 +6,5 @@ router.get('/getir',async(req,res,next) => {
     const musteriler = Musteri.find();
     res.send(musteriler);
 });
+
+module.exports = router;

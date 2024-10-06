@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const odemeRoutes = require('./routes/odeme');
 const adresRoutes = require('./routes/adres');
 const urunRoutes = require('./routes/urun');
+const musteriRoutes = require('./routes/musteri');
 
 const app = express();
 app.use(express.json());
@@ -23,6 +24,7 @@ connectDB();
 app.use('/odeme',odemeRoutes);
 app.use('/adres',adresRoutes);
 app.use('/urun',urunRoutes);
+app.use('/musteri',musteriRoutes);
 
 
 app.get('/',(req,res,next) => {

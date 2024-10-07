@@ -4,6 +4,7 @@ const odemeRoutes = require('./routes/odeme');
 const adresRoutes = require('./routes/adres');
 const urunRoutes = require('./routes/urun');
 const musteriRoutes = require('./routes/musteri');
+const userRoutes = require('./routes/user');
 
 const app = express();
 app.use(express.json());
@@ -25,7 +26,7 @@ app.use('/odeme',odemeRoutes);
 app.use('/adres',adresRoutes);
 app.use('/urun',urunRoutes);
 app.use('/musteri',musteriRoutes);
-
+app.use('/user',userRoutes);
 
 app.get('/',(req,res,next) => {
     res.send('E TİCARET WEB SİTESİNE HOŞGELDİNİZ');

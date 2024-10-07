@@ -1,14 +1,14 @@
 const express = require('express');
 const Odeme = require('../models/odeme');
-const logRequesDetails = require('../middleware/logMiddleware');
+const logRequestDetails = require('../middleware/logMiddleware');
 const router = express.Router();
 
-router.post('/ekle',logRequesDetails, async(req,res,next) => {
+router.post('/ekle',logRequestDetails, async(req,res,next) => {
     const yeni_odeme = await Odeme.create(req.body);
     res.send(yeni_odeme);
 });
 
-router.get('/getir',async(req,res,next) => {
+router.get('/getir',logRequestDetails,async(req,res,next) => {
     const odemeler = await Odeme.find();
     res.send(odemeler);
 });

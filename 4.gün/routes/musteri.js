@@ -1,8 +1,9 @@
 const express = require('express');
 const Musteri = require('../models/musteri');
+const logRequestDetails = require('../middleware/logMiddleware');
 const router = express.Router();
 
-router.get('/getir',async(req,res,next) => {
+router.get('/getir',logRequestDetails,async(req,res,next) => {
     const musteriler = await Musteri.find();
     res.send(musteriler);
 });
